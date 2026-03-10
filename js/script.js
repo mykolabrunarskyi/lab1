@@ -1,18 +1,24 @@
 class Stack {
     constructor() {
         this.items = [];
-        this.history = []; 
+        this.history = [];
     }
 
     push(element) {
         this.items.push(element);
-        this.history.push(`Push: ${element}`); 
+        this.history.push(`Push: ${element}`);
+        if (this.history.length > 10) {
+            this.history.shift();
+        }
     }
 
     pop() {
         if (this.isEmpty()) throw new Error("Stack empty");
         const item = this.items.pop();
-        this.history.push(`Pop: ${item}`); 
+        this.history.push(`Pop: ${item}`);
+        if (this.history.length > 10) {
+            this.history.shift();
+        }
         return item;
     }
 
@@ -20,6 +26,9 @@ class Stack {
         return this.items.length === 0;
     }
 
+    getHistory() {
+        return [...this.history];
+    }
 }
 const myStack = new Stack();
 myStack.push(1);
