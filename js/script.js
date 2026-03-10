@@ -7,17 +7,29 @@ class Stack {
         this.items.push(element);
     }
 
+    isEmpty() {
+        return this.items.length === 0;
+    }
+
     peek() {
-        if (this.items.length === 0) return "Стек порожній";
+        if (this.isEmpty()) {
+            throw new Error("Stack is empty: cannot peek");
+        }
         return this.items[this.items.length - 1];
     }
     
     pop() {
-        if (this.items.length === 0) return "Стек порожній";
+        if (this.isEmpty()) {
+            throw new Error("Stack is empty: cannot pop");
+        }
         return this.items.pop();
+    }
+
+    clear() {
+        this.items = [];
     }
 }
 
 const myStack = new Stack();
 myStack.push(1);
-console.log("Базовий стек створено");
+console.log("Базовий стек створено та очищено від коментарів");
