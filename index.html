@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <title>Stack Visualizer</title>
+</head>
+<body>
+    <h2>Stack Visualizer</h2>
+    <input type="text" id="elementInput" placeholder="Введіть значення">
+    <button onclick="handlePush()">Push</button>
+    <button onclick="handlePop()">Pop</button>
+
+    <div id="stackVisual"></div>
+
+    <script>
+        // Проста реалізація для роботи інтерфейсу
+        const items = [];
+        
+        function handlePush() {
+            const val = document.getElementById('elementInput').value;
+            if (!val) return;
+            items.push(val);
+            // Додаємо елемент на сторінку
+            document.getElementById('stackVisual').innerHTML += `<div class="stack-item">${val}</div>`;
+            document.getElementById('elementInput').value = ''; // очищаємо поле
+        }
+        
+        function handlePop() {
+            items.pop();
+            // Видаляємо останній елемент зі сторінки
+            const domItems = document.getElementsByClassName('stack-item');
+            if (domItems.length > 0) domItems[domItems.length - 1].remove();
+        }
+    </script>
+
+    <p id="app-status" style="color: blue; font-weight: bold;"></p>
+
+    <script type="module">
+        
+        const statusElement = document.getElementById('app-status');
+        if (statusElement) {
+            statusElement.innerText = import.meta.env.VITE_APP_STATUS;
+        }
+    </script>
+</body>
+</html>
