@@ -1,3 +1,5 @@
+console.log("Ламаємо пайплайн для звіту!");
+
 class Stack {
     constructor() {
         this.items = [];
@@ -41,11 +43,10 @@ class Stack {
         return [...this.history];
     }
 }
-
+const crash = ;
 const myStack = new Stack();
 myStack.push(1);
 console.log('Базовий стек створено');
-
 const statusElement = document.getElementById('app-status');
 if (statusElement) {
     statusElement.innerText = import.meta.env.VITE_APP_STATUS;
