@@ -1,1 +1,33 @@
-#ol
+[cite_start]name: CI/CD Pipeline # Назва, яку ти бачив на скриншоті [cite: 458]
+
+on:
+  push:
+    [cite_start]branches: [main, develop] # Запуск при кожному пуші в ці гілки [cite: 441, 448-451]
+  pull_request:
+    [cite_start]branches: [main, develop] # Перевірка перед злиттям коду [cite: 443, 453-456]
+
+jobs:
+  build-and-test:
+    [cite_start]name: Build and Test # Назва завдання [cite: 489]
+    [cite_start]runs-on: ubuntu-latest # Використовуємо Linux-сервер GitHub [cite: 490, 559]
+
+    steps:
+      - name: Checkout repository
+        [cite_start]uses: actions/checkout@v4 # Отримуємо твій код [cite: 493-494]
+
+      - name: Setup Node.js
+        [cite_start]uses: actions/setup-node@v4 # Встановлюємо Node.js [cite: 495-496, 588]
+        with:
+          node-version: 20
+
+      - name: Install dependencies
+        [cite_start]run: npm install # Завантажуємо бібліотеки [cite: 613-614]
+
+      - name: Run linter
+        [cite_start]run: npm run lint # Перевірка стилю коду [cite: 647-648]
+
+      - name: Run unit tests
+        [cite_start]run: npm run test:unit # Запуск тестів з 2-ї лаби [cite: 677-679]
+
+      - name: Build project
+        [cite_start]run: npm run build # Пробна збірка [cite: 1001]
