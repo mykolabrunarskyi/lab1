@@ -43,7 +43,7 @@ class Stack {
         return [...this.history];
     }
 }
-const crash = ;
+
 const myStack = new Stack();
 myStack.push(1);
 console.log('Базовий стек створено');
