@@ -1,5 +1,5 @@
 # Stack Data Structure (LIFO) Implementation
-
+[![CI/CD Pipeline](https://github.com/mykolabrunarskyi/lab1/actions/workflows/ci-cd.yml/badge.svg)](https://github.com/mykolabrunarskyi/lab1/actions/workflows/ci-cd.yml)
 A lightweight and efficient JavaScript implementation of the Stack data structure. This project provides a robust class-based approach to managing elements following the "Last-In, First-Out" principle.
 
 ## Features
