@@ -1,6 +1,15 @@
 # Stack Data Structure (LIFO) Implementation
+
 [![CI/CD Pipeline](https://github.com/mykolabrunarskyi/lab1/actions/workflows/ci-cd.yml/badge.svg)](https://github.com/mykolabrunarskyi/lab1/actions/workflows/ci-cd.yml)
+
 A lightweight and efficient JavaScript implementation of the Stack data structure. This project provides a robust class-based approach to managing elements following the "Last-In, First-Out" principle.
+
+## 🚀 Live Demo & Results
+
+- **Production Deployment:** [Live App on Vercel](https://lab1-chi-seven.vercel.app/)
+- **Repository:** [GitHub Source Code](https://github.com/mykolabrunarskyi/lab1)
+
+*This project features a fully automated CI/CD pipeline. Every push to the main branch is automatically tested, built, and deployed to Vercel.*
 
 ## Features
 
@@ -13,6 +22,7 @@ A lightweight and efficient JavaScript implementation of the Stack data structur
 
 - **Language**: JavaScript (ES6+)
 - **Environment**: Web Browsers / Node.js
+- **CI/CD**: GitHub Actions, Vercel
 - **Version Control**: Git
 
 ## Project Structure
